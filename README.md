@@ -56,7 +56,7 @@ Cloud Storage
 (e.g., AWS S3)
 ```
 
-## Code Deep Dive: Key Components
+## Code Components
 EnhancedObjectDetectionPipeline: The main orchestrator class that manages the entire workflow.
 
 BackboneNetwork: Contains the logic for the ResNet-like feature extractor. This can be swapped out with other backbones like EfficientNet or MobileNet.
@@ -69,12 +69,12 @@ StorageInterface / S3Storage: An example of the Strategy design pattern. To add 
 
 ## Extensibility
 
-This project is designed to be a starting point. Here are some ways you can extend it:
+Some ways to extend this model include:
 
   Implement a GCP Storage Backend: Create a GCPStorage class that implements the StorageInterface and complete the conceptual replicate_to_gcp_storage function for cross-cloud workflows.
 
   Add a Real Proposal Network: Replace the simulated generate_roi_proposals function with a Region Proposal Network (RPN) to create a full Faster R-CNN implementation.
 
-  Train with Real Data: Adapt the pipeline to load a real dataset (e.g., COCO) and implement a proper training loop for both the backbone and the ROI head.
+  Train with Real Data: Adapt the pipeline to load a real dataset (your own, ImageNet, COCO) and implement proper training for both the backbone and the ROI head.
 
   Add More Analyzers: Enhance the ImageAnalyzer with more sophisticated functions, such as estimating the lighting conditions, detecting text (OCR), or identifying image composition styles.
