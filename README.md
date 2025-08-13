@@ -12,11 +12,17 @@ The script demonstrates a modern two-stage detection process, including a ResNet
 **Advanced ROI Head**: Employs parallel branches to simultaneously classify the object's identity ("what is it?") and regress its bounding box coordinates ("where is it?").
 
 **Metadata Extraction**: Each detected object is analyzed for:
+  
   Image Quality: Assesses sharpness, contrast, brightness, and noise.
+  
   Color Composition: Extracts dominant colors using K-Means clustering.
+  
   Spatial Analysis: Calculates the object's size relative to the entire image.
+  
   Pluggable Cloud Storage Backend: Features a storage interface (StorageInterface) with a ready-to-use AWS S3 implementation (S3Storage) for saving detected ROIs and their JSON metadata.
+  
   Non-Maximum Suppression (NMS): Includes a from-scratch NMS implementation to clean up overlapping detections and produce a final, precise output.
+  
   Extensible Design: Built with modern Python features like dataclasses and abstract base classes, making it easy to extend with new models, analysis functions, or storage backends (e.g., Google Cloud Storage).
 
 ## Architecture Overview
